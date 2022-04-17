@@ -1,0 +1,111 @@
+﻿@model IEnumerable<proje.Entity.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+
+                <!-- /.card-header -->
+                <div class="card-body">
+
+
+                    <table id="example2" class="table table-bordered table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>Resim</th>
+                                <th>Ürün Adı</th>
+                                <th>Onaylı</th>
+                                <th>Anasayfa</th>
+                                <th>Popüler</th>
+                                <th>Kategori Adı</th>
+                                <th>  </th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    <img src="~/Content/Image/@item.Image" width="75" height="50">
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @if (item.IsApproved)
+                                    {
+                                        <label class="label label-success"> <i class="fas fa-check"></i> Evet </label>
+                                    }
+
+                                    else
+                                    {
+                                        <label class="label label-danger"> <i class="fas fa-window-close"></i> Hayır </label>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.IsHome)
+                                    {
+                                        <label class="label label-success"> <i class="fas fa-check"></i> Evet </label>
+                                    }
+                                    else
+                                    {
+                                        <label class="label label-danger"> <i class="fas fa-window-close"></i> Hayır </label>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.IsFeatured)
+                                    {
+                                        <label class="label label-success"> <i class="fas fa-check"></i> Evet </label>
+                                    }
+                                    else
+                                    {
+                                        <label class="label label-danger"> <i class="fas fa-window-close"></i> Hayır </label>
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category.Name)
+                                </td>
+
+                                <td>
+
+                                    <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = item.Id } )">Düzenle</a>
+                                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.Id } )">Sil</a>
+                                    <a class="btn btn-primary btn-sm bg-yellow" href="@Url.Action("Create", new { id = item.Id } )">Oluştur</a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+
+                        <tfoot>
+                            <tr>
+                                <th>Resim</th>
+                                <th>Ürün Adı</th>
+                                <th>Onaylı</th>
+                                <th>Anasayfa</th>
+                                <th>Popüler</th>
+                                <th>Kategori Adı</th>
+                                <th>  </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+
+

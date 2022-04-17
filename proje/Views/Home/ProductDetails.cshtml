@@ -1,0 +1,78 @@
+﻿@using proje.Entity
+@model Product
+@{
+    ViewBag.Title = "ProductDetails";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+
+            <div id="sidebar" class="span3">
+
+
+                @Html.Action("Summary", "Cart")
+
+
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+
+                    @Html.Action("_CategoryList", "Category")
+
+
+
+                </ul>
+                <br />
+
+                @Html.Action("FeaturedProductList", "Home")
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href="products.html">Products</a> <span class="divider">/</span></li>
+                    <li class="active">product Details</li>
+                </ul>
+                <div class="row">
+                    <div id="gallery" class="span3" <br />
+                        <a href="~/Content/Site/bootstrap-shop/themes/images/products/large/f1.jpg" title="Fujifilm FinePix S2950 Digital Camera">
+                            <img src="~/Content/Image/@Model.Image" style="width:100%" alt="Fujifilm FinePix S2950 Digital Camera">
+                        </a>
+
+
+                    </div>
+                    <div class="span6">
+                        <ul id="productDetail" class="nav nav-tabs">
+                            <li class="active"><a href="#home" data-toggle="tab">Ürün Detayları</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade active in" id="home">
+                                <h4>Ürün Bilgileri</h4>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr class="techSpecRow"><th colspan="2">Ürün Detay</th></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Adı </td><td class="techSpecTD2">@Model.Name</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Açıklama</td><td class="techSpecTD2">@Model.Description</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Fiyat</td><td class="techSpecTD2">@Model.Price</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Adet</td><td class="techSpecTD2">@Model.Stock</td></tr>
+                                        <tr class="techSpecRow">
+                                            <th colspan="2">
+                                                @using (Html.BeginForm("AddToCart", "Cart"))
+                                                {
+                                                    @Html.HiddenFor(i=>i.Id)
+                                                <button type="submit" class="btn btn-large btn-primary pull-right"> Sepete Ekle <i class=" icon-shopping-cart"></i></button>
+                                                }
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+

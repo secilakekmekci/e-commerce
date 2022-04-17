@@ -1,0 +1,6 @@
+﻿@model proje.Models.Cart
+
+<div class="well well-small"><a id="myCart" href="product_summary.html"> 
+    [@Model.Cartlines.Count] Adet
+    <span class="badge badge-warning pull-right">@Model.Total().ToString("c")</span>
+</a></div>

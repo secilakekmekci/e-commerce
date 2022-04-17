@@ -1,0 +1,71 @@
+﻿@model IEnumerable<proje.Entity.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                
+                <!-- /.card-header -->
+                <div class="card-body">
+                    
+
+                    <table id="example2" class="table table-bordered table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>Kategori Adı</th>
+                                <th>Açıklama</th>
+
+                                <th>  </th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+
+                                    <td>
+
+                                        <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = item.Id } )">Düzenle</a>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.Id } )">Sil</a>
+                                        <a class="btn btn-primary btn-sm bg-yellow" href="@Url.Action("Create", new { id = item.Id } )">Oluştur</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                        <tfoot>
+                            <tr>
+                                <th>Kategori Adı</th>
+                                <th>Açıklama</th>
+                                <th> </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+        
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+

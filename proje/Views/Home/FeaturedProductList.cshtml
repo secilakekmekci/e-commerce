@@ -1,0 +1,20 @@
+﻿@using proje.Entity
+@model IEnumerable<Product>
+
+<h5>Popüler Ürünler</h5>
+@foreach (var item in Model)
+{
+
+    <div class="thumbnail" style="width:260 px; height:210px;">
+        <img src="~/Content/Image/@item.Image" alt="Bootshop panasonoc New camera" style="width:125px; height:90px;"/>
+        <div class="caption">
+            <h5><a href="/Home/ProductDetails/@item.Id">@item.Name</a></h5>
+            <h4 style="text-align:center">
+          
+            <a class="btn" href="/Home/ProductDetails/@item.Id">Görüntüle <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@item.Price (₺)</a></h4>
+        </div>
+    </div>
+
+}
+
+

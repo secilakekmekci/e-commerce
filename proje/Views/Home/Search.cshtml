@@ -1,0 +1,96 @@
+﻿@using proje.Entity 
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+
+            <div id="sidebar" class="span3">
+
+                @Html.Action("Summary", "Cart")
+
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+
+                    @Html.Action("_CategoryList", "Category")
+
+
+
+                </ul>
+                <br />
+
+                <div class="thumbnail">
+                    <img src="~/Content/Site/bootstrap-shop/themes/images/products/tv0.jpg" alt="Bootshop panasonoc New camera" />
+                    <div class="caption">
+                        <h5>Teba Televizyon</h5>
+                        <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Sepete Ekle <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">1.015,00 (₺)</a></h4>
+                    </div>
+                </div><br />
+                <div class="thumbnail">
+
+
+                    <img src="~/Content/Site/bootstrap-shop/themes/images/products/ceptel.jpg" title="Bootshop New Kindel" alt="Bootshop Kindel">
+                    <div class="caption">
+                        <h5>Xiaomi Cep Telefonu</h5>
+                        <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Sepete Ekle<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">3.499,00 (₺)</a></h4>
+                    </div>
+                </div><br />
+                <div class="thumbnail">
+                    <img src="~/Content/Site/bootstrap-shop/themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
+                    <div class="caption">
+                        <h5>Ödeme Yöntemleri</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Anasayfa</a> <span class="divider">/</span></li>
+                    <li class="active">Ürünler</li>
+                </ul>
+                <h3> Ürünler <small class="pull-right"> </small></h3>
+                <hr class="soft">
+
+                <hr class="soft">
+
+
+
+                <br class="clr">
+                <div class="tab-content">
+
+
+                    <div class="tab-pane  active" id="blockView">
+                        <ul class="thumbnails">
+                            @foreach (var item in Model)
+                            {
+                                <li class="span3">
+                                    <div class="thumbnail" style="width:270px;height:310px">
+                                        <a href="/Home/ProductDetails/@item.Id"><img style="width:160px;height:120px;max-width:160px;max-height:160px" src="~/Content/Image/@item.Image" alt="" /></a>
+                                        <div class="caption" style="width:260px;height:140px">
+                                            <h5><a href="/Home/ProductDetails/@item.Id">@item.Name</a></h5>
+                                            <p>
+                                                @item.Description
+                                            </p>
+
+                                            <h4 style="text-align:center"><a class="btn" href="/Home/ProductDetails/@item.Id">Görüntüle <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary">@item.Price (₺)</a></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+
+
+
+                        </ul>
+                        <hr class="soft">
+                    </div>
+                </div>
+                <br class="clr">
+            </div>
+        </div>
+    </div>
+</div>
+

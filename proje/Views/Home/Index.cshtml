@@ -1,0 +1,238 @@
+﻿@using proje.Models
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Action("_Slider", "Home")
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+
+   
+            <div id="sidebar" class="span3">
+
+                @Html.Action("Summary","Cart")
+
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+
+                    @Html.Action("_CategoryList", "Category")
+
+
+
+                </ul>
+                <br />
+                <br />
+
+
+                @Html.Action("FeaturedProductList", "Home")
+            </div>
+            <!-- Sidebar end=============================================== -->
+  
+            <div class="span9">
+                <div class="well well-small">
+                    <h4>Öne Çıkanlar<small class="pull-right">200+ öne çıkan ürün</small></h4>
+                    <div class="row-fluid">
+                        <div id="featured" class="carousel slide">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <ul class="thumbnails">
+                                        <li class="span3">
+                                            <div class="thumbnail" style="width:270px;height:310px">
+                                                <i class="tag"></i>
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/tv0.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Teba Televizyon</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">1.015,00 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <i class="tag"></i>
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/supurge.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Midea Akıllı Robot Süpürge</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">4.799,00 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <i class="tag"></i>
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/isitici.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Golden Star Isıtıcı</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">169,90 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <i class="tag"></i>
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/kadinmasa.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Remington Maşa</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">282,92 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <ul class="thumbnails">
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <i class="tag"></i>
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/tv1.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Xiaomi Televizyon</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">1.975,00 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <i class="tag"></i>
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/ceptel.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Xiaomi Cep Telefonu</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">3.499,00 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/erkeksaat.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Skmei Erkek Saat</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">109,90 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/kadinayakkabi.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Polo Kadın Bot</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">289,90 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <ul class="thumbnails">
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/erkekayakkabi.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>XStep Erkek Bot</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">119,90 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/salincak.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Nestt Salıncak</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">939,90 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/masasandalye.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Tilia Osaka Bahçe Mobilyası</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">1.849,00 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/avize.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Trendylight Asel Avize</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">329,99 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <ul class="thumbnails">
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/ariel.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Ariel Toz Çamaşır Deterjanı</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">127,90  (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/bisiklet.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Canello Bisiklet</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">894,90 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/tvunit.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Julia Tv Ünitesi</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">499,90 (₺)</span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a href="product_details.html"><img src="~/Content/Site/bootstrap-shop/themes/images/products/kadinparfum.jpg" alt=""></a>
+                                                <div class="caption">
+                                                    <h5>Avon Kadın Parfüm</h5>
+                                                    <h4><a class="btn" href="product_details.html">Gör</a> <span class="pull-right">56,90 (₺) </span></h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
+                            <a class="right carousel-control" href="#featured" data-slide="next">›</a>
+                        </div>
+                    </div>
+                </div>
+                <h4>En Yeniler</h4>
+                <ul class="thumbnails">
+                    @foreach (var item in Model)
+                    {
+                        <li class="span3">
+                            <div class="thumbnail" style="width:270px;height:310px">
+                                <a href="/Home/ProductDetails/@item.Id"><img style="width:160px;height:120px;max-width:160px;max-height:160px" src="~/Content/Image/@item.Image" alt="" /></a>
+                                <div class="caption" style="width:260px;height:140px">
+                                    <h5><a href="/Home/ProductDetails/@item.Id">@item.Name</a></h5>
+                                    <p>
+                                        @item.Description
+                                    </p>
+
+                                    <h4 style="text-align:center"><a class="btn" href="/Home/ProductDetails/@item.Id">Görüntüle <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary">@item.Price (₺)</a></h4>
+                                </div>
+                            </div>
+                        </li>
+                    }    
+                  
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+

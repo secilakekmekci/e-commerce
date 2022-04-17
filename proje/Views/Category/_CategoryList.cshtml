@@ -1,0 +1,14 @@
+﻿@using proje.Models
+@model IEnumerable<CategoryModel>
+
+<li><a href="/Home/Product"> Tüm Ürünler </a></li>
+
+@foreach (var item in Model)
+{
+
+<li><a href="/Home/ProductList/@item.Id"> @item.Name [@item.Count] </a></li>
+
+}
+
+
+
